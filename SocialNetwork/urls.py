@@ -1,3 +1,5 @@
+from django.urls import path, include
+
 """SocialNetwork URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -18,4 +20,6 @@ from django.urls import path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/', include('User.urls')),
+    path('api-auth/', include('rest_framework.urls', namespace = 'rest_framework')),
 ]
